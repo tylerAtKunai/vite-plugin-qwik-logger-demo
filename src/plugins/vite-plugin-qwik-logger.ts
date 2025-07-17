@@ -87,9 +87,11 @@ export default function qwikLogger(): Plugin {
 		 * we can specify which order the hooks are executed in.
 		 * In this example, we specify resolveId as an object rather than a function.
 		 * The order property tells which order to run this hook in. The options are
-		 * 'pre' to run first, 'post' to run last, or null to run in the order the hook 
-		 * is presented in vite.config.ts. Then we can define a handler that executes 
-		 * when resolveId is called.
+		 * 'pre' to run first, 'post' to run last, or 'default' to be executed somewhere 
+		 * in the middle. If multiple plugins have the same hook defined with the same 
+		 * order, they will be executed in the order the plugins are presented in 
+		 * vite.config.ts. Then we can define a handler that executes when resolveId is 
+		 * called.
 		 */
 		// resolveId: {
 		// 	order: 'pre',
